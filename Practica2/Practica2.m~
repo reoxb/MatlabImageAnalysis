@@ -1,0 +1,113 @@
+clc % limpia pantalla
+clear all % limpia todas las variables
+close all % cierra los procesos
+warning off all % muestra sugerencias
+
+%lectura de una imagen desde un archivo
+imagen=imread('/home/reoxb/Documentos/Escom/Nivel_III/Analisis de Imagenes/Practicas/Practica2/flower.jpg');
+
+%despliege de una imagen
+figure(1)
+imshow(imagen)
+
+%cambiar a rojo
+figure(2)
+rojo=imagen;
+%apaga green
+rojo(:,:,2)=0;
+%apaga azul
+rojo(:,:,3)=0;
+imshow(rojo)
+
+%cambiar a azul
+figure(3)
+azul=imagen;
+%apaga green
+azul(:,:,2)=0;
+%apaga red
+azul(:,:,1)=0;
+imshow(azul)
+
+%cambiar a verde
+figure(4)
+verde=imagen;
+%apaga red
+verde(:,:,1)=0;
+%apaga azul
+verde(:,:,3)=0;
+imshow(verde)
+
+%amarillo
+figure(5)
+amarillo = rojo + verde;
+imshow(amarillo)
+
+%cyan
+figure(6)
+cyan = azul + verde;
+imshow(cyan)
+
+%magenta
+figure(7)
+magenta = azul + rojo;
+imshow(magenta)
+
+%histograma del nivel de rojo ---------------------------------------------
+figure(8)
+imhist(imagen(:,:,1))
+
+title('Histograma de la imagen en rojo')
+xlabel('# de niveles de rojo')
+ylabel('# de frecuencia con que aparece') 
+
+
+%histograma del nivel de verde ---------------------------------------------
+figure(9)
+imhist(imagen(:,:,2))
+
+title('Histograma de la imagen en verde')
+xlabel('# de niveles de verde')
+ylabel('# de frecuencia con que aparece')
+
+
+%histograma del nivel de azul ---------------------------------------------
+figure(10)
+imhist(imagen(:,:,3))
+
+title('Histograma de la imagen en azul')
+xlabel('# de niveles de verde')
+ylabel('# de frecuencia con que aparece')
+
+%histograma del nivel de cyan ---------------------------------------------
+figure(8)
+imhist(cyan(:,:,1))
+
+title('Histograma de la imagen en rojo')
+xlabel('# de niveles de rojo')
+ylabel('# de frecuencia con que aparece')
+
+%histograma del nivel de magenta ---------------------------------------------
+figure(8)
+imhist(imagen(:,:,1))
+
+title('Histograma de la imagen en rojo')
+xlabel('# de niveles de rojo')
+ylabel('# de frecuencia con que aparece')
+
+
+%histograma del nivel de amarillo ---------------------------------------------
+figure(8)
+imhist(imagen(:,:,1))
+
+title('Histograma de la imagen en rojo')
+xlabel('# de niveles de rojo')
+ylabel('# de frecuencia con que aparece')
+
+%%%TAREA
+%tot = [imagen rojo; verde azul];
+%imshow(tot)
+%rgb=rojo(:,:,[1 2 3]);
+
+disp('fin del programa') %printf
+
+
